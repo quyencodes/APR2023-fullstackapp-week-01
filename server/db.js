@@ -1,22 +1,21 @@
 // import mongoose
-import mongoose from 'mongoose';
-import dotenv from 'dotenv';
+const mongoose = require('mongoose');
+const dotenv = require('dotenv')
 dotenv.config()
 
-// connect to db instance via uri
-mongoose.connect(`${process.env.URI}`).then(() => {
-  console.log(`Connected to database successfully`)
+const URI = process.env.URI
+// establish a connection via URI
+mongoose.connect(`${URI}`).then(() => {
+  console.log('Database connected successfully')
 })
 
-// create schema
+// create schema(s)
 const anime_schema = new mongoose.Schema({
   title: {
     type: String,
     unique: true
   },
-  description: {
-    type: String
-  },
+  description: String,
   watched: {
     type: Boolean,
     default: false
@@ -24,7 +23,9 @@ const anime_schema = new mongoose.Schema({
 })
 
 // create model
-const animedb = mongoose.model('anime', anime_schema)
+const animedb = mongoose.model('animedb', anime_schema)
 
 // export model
-export default animedb
+module.exports = {
+  animedb
+}

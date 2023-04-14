@@ -1,6 +1,8 @@
 // import mongoose
-const mongoose = require('mongoose');
-const dotenv = require('dotenv')
+import mongoose from 'mongoose';
+// const mongoose = require('mongoose');
+import dotenv from 'dotenv';
+// const dotenv = require('dotenv')
 dotenv.config()
 
 const URI = process.env.URI
@@ -26,6 +28,4 @@ const anime_schema = new mongoose.Schema({
 const animedb = mongoose.model('animedb', anime_schema)
 
 // export model
-module.exports = {
-  animedb
-}
+export default animedb

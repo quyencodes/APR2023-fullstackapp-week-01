@@ -1,10 +1,10 @@
 // import express and other libraries
-const express = require('express');
-const cors = require('cors');
-const morgan = require('morgan');
-const { animedb } = require('./db.js');
-const dotenv = require('dotenv');
-const { getOne, getAll, createOne, updateOne, deleteOne } = require('./model.js')
+import express from 'express';
+import cors from 'cors';
+import morgan from 'morgan';
+import dotenv from 'dotenv';
+import animedb from './db.js'
+import { getOne, getAll, createOne, updateOne, deleteOne } from './model.js'
 
 // create express app
 const app = express()
@@ -14,6 +14,8 @@ dotenv.config()
 app.use(cors())
 app.use(morgan('combined'))
 app.use(express.json())
+app.use(express.static(__dirname + '/src'));
+
 
 app.get('/anime', (req, res) => {
   getAll()
@@ -38,7 +40,7 @@ app.put('/anime/:id', (req, res) => {
 app.delete('/anime/:id', (req, res) => {
   const id = req.params.id
   deleteOne(id)
-  .then((deletedAnime) => res.status(200).json(deletedAnime))
+  .then((deletedAnime) => res.status(200).json('Deleted successfully'))
   .catch(err => console.log(err))
 })
 

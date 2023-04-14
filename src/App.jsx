@@ -2,7 +2,7 @@ import react from 'react';
 
 export default function App() {
   return (
-    <div>
+    <div className="bg-yellow">
       hello world
     </div>
   )

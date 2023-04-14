@@ -61,6 +61,8 @@ export default {
       React: 'react',
     }),
     // https://www.npmjs.com/package/mini-css-extract-plugin
-    new MiniCssExtractPlugin(),
+    new MiniCssExtractPlugin({
+      filename: "./styles/input.css"
+    }),
   ],
 }

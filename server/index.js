@@ -14,7 +14,7 @@ dotenv.config()
 app.use(cors())
 app.use(morgan('combined'))
 app.use(express.json())
-app.use(express.static(__dirname + '/src'));
+// app.use(express.static(__dirname + '/src'));
 
 
 app.get('/anime', (req, res) => {

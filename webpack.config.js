@@ -7,7 +7,7 @@ export default {
   mode: process.env.NODE_ENV === 'production' ? 'production' : 'development',
   target: 'web',
   // Signifies entry point of the application (default: src/index.js)
-  entry: path.resolve(process.cwd(), 'src/index.jsx'),
+  entry: path.resolve(process.cwd(), 'src/index.js'),
   output: {
     // Cwd is a method of the global object process, returns a string value which is the current working directory of the Node.js process.
     // https://stackoverflow.com/questions/9874382/whats-the-difference-between-process-cwd-vs-dirname

@@ -3,3 +3,38 @@ html {
   background: #0a192f;
   color: #fff;
 }
+
+.sub-container {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  width: 40%;
+}
+
+.search-container {
+  display: flex;
+  position: relative;
+  width: 100%;
+  margin-bottom: 1vw;
+  font-size: 18px;
+  padding: 0;
+}
+
+.search-divider {
+  flex-grow: 2;
+}
+
+.button-reset {
+  right: 0;
+}
+
+div.search-container > label > input {
+  width: 12.5rem;
+}
+
+.animes-object {
+  padding: 2vw;
+  border: #fff solid 1px;
+  margin-bottom: 1vw;
+  font-size: 18px;
+}

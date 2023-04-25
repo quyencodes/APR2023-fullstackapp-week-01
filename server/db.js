@@ -17,7 +17,10 @@ const anime_schema = new mongoose.Schema({
     type: String,
     unique: true
   },
-  description: String,
+  description: {
+    type: String,
+    default: 'this is the default description',
+  },
   watched: {
     type: Boolean,
     default: false
